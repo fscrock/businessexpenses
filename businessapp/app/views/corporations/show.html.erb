@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @corporation.name %>
+</p>
+
+<p>
+  <strong>Is private:</strong>
+  <%= @corporation.is_private %>
+</p>
+
+<p>
+  <strong>Owner ids:</strong>
+  <%= @corporation.owner_ids %>
+</p>
+
+<%= link_to 'Edit', edit_corporation_path(@corporation) %> |
+<%= link_to 'Back', corporations_path %>

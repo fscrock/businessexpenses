@@ -40,11 +40,14 @@ everything what is paid cash with receipt or ordered online.
 
 ## Corporation
 
-* name (Schmuck, Gastgewerbe, IT, 2p, medications, chessential, mashdish ..)			(String)
-* is_private 			(Boolean)
-* owner_ids				(Array)
+* name (Schmuck, Gastgewerbe, IT, 2p, medications, chessential, mashdish ..)
 
-## Owner
+```
+rails g scaffold corporation name:string is_private:boolean owner_ids:array
+```
+
+
+## Owner: OK
 
 ```
 rails g scaffold owner name:string
