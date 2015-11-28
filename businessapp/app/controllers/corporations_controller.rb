@@ -4,6 +4,7 @@ class CorporationsController < ApplicationController
   # GET /corporations
   def index
     @corporations = Corporation.all
+    @owners = Owner.all.map{|owner| {owner.id.to_s => owner.name}}.reduce Hash.new, :merge
   end
 
   # GET /corporations/1

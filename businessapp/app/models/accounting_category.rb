@@ -1,8 +1,6 @@
-class Corporation
+class AccountingCategory
   include MongoMapper::Document
 
   key :name, String
-  key :is_private, Boolean
-  key :owner_ids, Array
   timestamps!
 end

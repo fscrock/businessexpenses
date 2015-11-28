@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Accounting Categories</h1>
+
+<table class="uk-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounting_categories.each do |accounting_category| %>
+      <tr>
+        <td><%= accounting_category.name %></td>
+        <td><%= link_to 'Show', accounting_category %></td>
+        <td><%= link_to 'Edit', edit_accounting_category_path(accounting_category) %></td>
+        <td><%= link_to 'Destroy', accounting_category, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accounting category', new_accounting_category_path %>

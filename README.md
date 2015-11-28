@@ -4,8 +4,20 @@ everything what is paid cash with receipt or ordered online.
 
 # Data Model
 
+```
+rails g scaffold accounting_category name:string
+rails g scaffold corporation name:string is_private:boolean owner_ids:array
+rails g scaffold owner name:string
+
+```
+
 
 ## AccountingStatement
+
+```
+rails g scaffold accounting_statement name:string
+```
+
 
 * income (or_costs) 	(Boolean)
 * net_amount			(Float)
@@ -25,33 +37,7 @@ everything what is paid cash with receipt or ordered online.
 * accounting_category_id	(Integer)
 * corporation_id			(Integer)
 
-## AccountingCategory 
-* name					(String)
-	* telecomuincation
-	* hardware
-	* software
-	* books
-	* food
-	* fuel
-	* services (lawyer, cleaning ..)
-	* insurance
-	* operating cost
-	* officials
-
-## Corporation
-
-* name (Schmuck, Gastgewerbe, IT, 2p, medications, chessential, mashdish ..)
-
-```
-rails g scaffold corporation name:string is_private:boolean owner_ids:array
-```
 
 
-## Owner: OK
-
-```
-rails g scaffold owner name:string
-```
-
-
+ 
 
