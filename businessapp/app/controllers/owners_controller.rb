@@ -32,7 +32,7 @@ class OwnersController < ApplicationController
 
   # PATCH/PUT /owners/1
   def update
-    if @owner.update(owner_params)
+    if @owner.update_attributes(owner_params)
       redirect_to @owner, notice: 'Owner was successfully updated.'
     else
       render :edit
