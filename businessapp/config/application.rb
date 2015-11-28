@@ -12,6 +12,5 @@ Bundler.require(*Rails.groups)
 module Businessapp
   class Application < Rails::Application
     config.generators{|g| g.orm :mongo_mapper}
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end

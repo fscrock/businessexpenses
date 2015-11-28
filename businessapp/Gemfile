@@ -6,6 +6,7 @@ gem 'jquery-rails'
 gem 'mongo_mapper'
 gem 'bson_ext'
 gem 'thin'
+gem 'turbolinks'
 
 group :development do
   # using <%= console %> in views
