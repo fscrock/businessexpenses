@@ -2,10 +2,10 @@
 
 <h1>Listing Accounting Statements</h1>
 
-<table>
+<table class="uk-table">
   <thead>
     <tr>
-      <th>Is income</th>
+      <th>Type</th>
       <th>Net amount</th>
       <th>Vat amount</th>
       <th>Frontpage data</th>
@@ -29,7 +29,7 @@
   <tbody>
     <% @accounting_statements.each do |accounting_statement| %>
       <tr>
-        <td><%= accounting_statement.is_income %></td>
+        <td><%= (accounting_statement.is_income) ? "Income" : "Costs" %></td>
         <td><%= accounting_statement.net_amount %></td>
         <td><%= accounting_statement.vat_amount %></td>
         <td><%= accounting_statement.frontpage_data %></td>

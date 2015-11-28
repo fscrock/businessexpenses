@@ -18,4 +18,12 @@ class AccountingStatement
   key :receiver_or_issuer_name, String
   key :accounting_category_id, ObjectId
   key :corporation_id, ObjectId
+  timestamps!
+  
+  validates_presence_of :is_income            
+  validates_presence_of :net_amount            
+  validates_presence_of :vat_amount            
+  validates_presence_of :receiver_or_issuer_name            
+  validates_presence_of :corporation_id
+  
 end

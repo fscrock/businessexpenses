@@ -3,4 +3,7 @@ class AccountingCategory
 
   key :name, String
   timestamps!
+  
+  validates_presence_of :name
+  
 end
