@@ -1,0 +1,2 @@
+module AccountingStatementsHelper
+end

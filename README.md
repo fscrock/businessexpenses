@@ -8,34 +8,9 @@ everything what is paid cash with receipt or ordered online.
 rails g scaffold accounting_category name:string
 rails g scaffold corporation name:string is_private:boolean owner_ids:array
 rails g scaffold owner name:string
-
+rails g scaffold accounting_statement is_income:boolean net_amount:float vat_amount:float frontpage_data:binary backpage_data:binary frontpage_content_type:string backpage_content_type:string backpage_filename:string frontpage_filename:string bill_number:string issuedate:date payment_date:date description:string physical_location:string receiver_or_issuer_name:string accounting_category_id:object_id corporation_id:object_id
 ```
 
-
-## AccountingStatement
-
-```
-rails g scaffold accounting_statement name:string
-```
-
-
-* income (or_costs) 	(Boolean)
-* net_amount			(Float)
-* value_added_tax		(Float)
-* frontpage_data		(Binary)
-* backpage_data			(Binary)
-* frontpage_content_type	(String)
-* backpage_content_type		(String)
-* backpage_filename			(String)
-* frontpage_filename		(String)
-* bill_number			(String)
-* issue date			(Date)
-* payment date			(Date)
-* description			(String)
-* physical_location		(String)
-* receiver_or_issuer_name (Kim, airbnb, LPG, booking com, finanzamt) (String)
-* accounting_category_id	(Integer)
-* corporation_id			(Integer)
 
 
 

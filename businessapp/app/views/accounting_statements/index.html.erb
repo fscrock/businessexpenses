@@ -1,0 +1,59 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Accounting Statements</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Is income</th>
+      <th>Net amount</th>
+      <th>Vat amount</th>
+      <th>Frontpage data</th>
+      <th>Backpage data</th>
+      <th>Frontpage content type</th>
+      <th>Backpage content type</th>
+      <th>Backpage filename</th>
+      <th>Frontpage filename</th>
+      <th>Bill number</th>
+      <th>Issuedate</th>
+      <th>Payment date</th>
+      <th>Description</th>
+      <th>Physical location</th>
+      <th>Receiver or issuer name</th>
+      <th>Accounting category</th>
+      <th>Corporation</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounting_statements.each do |accounting_statement| %>
+      <tr>
+        <td><%= accounting_statement.is_income %></td>
+        <td><%= accounting_statement.net_amount %></td>
+        <td><%= accounting_statement.vat_amount %></td>
+        <td><%= accounting_statement.frontpage_data %></td>
+        <td><%= accounting_statement.backpage_data %></td>
+        <td><%= accounting_statement.frontpage_content_type %></td>
+        <td><%= accounting_statement.backpage_content_type %></td>
+        <td><%= accounting_statement.backpage_filename %></td>
+        <td><%= accounting_statement.frontpage_filename %></td>
+        <td><%= accounting_statement.bill_number %></td>
+        <td><%= accounting_statement.issuedate %></td>
+        <td><%= accounting_statement.payment_date %></td>
+        <td><%= accounting_statement.description %></td>
+        <td><%= accounting_statement.physical_location %></td>
+        <td><%= accounting_statement.receiver_or_issuer_name %></td>
+        <td><%= accounting_statement.accounting_category_id %></td>
+        <td><%= accounting_statement.corporation_id %></td>
+        <td><%= link_to 'Show', accounting_statement %></td>
+        <td><%= link_to 'Edit', edit_accounting_statement_path(accounting_statement) %></td>
+        <td><%= link_to 'Destroy', accounting_statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Accounting statement', new_accounting_statement_path %>

@@ -1,0 +1,85 @@
+<%= form_for(@accounting_statement) do |f| %>
+  <% if @accounting_statement.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@accounting_statement.errors.count, "error") %> prohibited this accounting_statement from being saved:</h2>
+
+      <ul>
+      <% @accounting_statement.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :is_income %><br>
+    <%= f.check_box :is_income %>
+  </div>
+  <div class="field">
+    <%= f.label :net_amount %><br>
+    <%= f.text_field :net_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :vat_amount %><br>
+    <%= f.text_field :vat_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :frontpage_data %><br>
+    <%= f.text_field :frontpage_data %>
+  </div>
+  <div class="field">
+    <%= f.label :backpage_data %><br>
+    <%= f.text_field :backpage_data %>
+  </div>
+  <div class="field">
+    <%= f.label :frontpage_content_type %><br>
+    <%= f.text_field :frontpage_content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :backpage_content_type %><br>
+    <%= f.text_field :backpage_content_type %>
+  </div>
+  <div class="field">
+    <%= f.label :backpage_filename %><br>
+    <%= f.text_field :backpage_filename %>
+  </div>
+  <div class="field">
+    <%= f.label :frontpage_filename %><br>
+    <%= f.text_field :frontpage_filename %>
+  </div>
+  <div class="field">
+    <%= f.label :bill_number %><br>
+    <%= f.text_field :bill_number %>
+  </div>
+  <div class="field">
+    <%= f.label :issuedate %><br>
+    <%= f.date_select :issuedate %>
+  </div>
+  <div class="field">
+    <%= f.label :payment_date %><br>
+    <%= f.date_select :payment_date %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :physical_location %><br>
+    <%= f.text_field :physical_location %>
+  </div>
+  <div class="field">
+    <%= f.label :receiver_or_issuer_name %><br>
+    <%= f.text_field :receiver_or_issuer_name %>
+  </div>
+  <div class="field">
+    <%= f.label :accounting_category_id %><br>
+    <%= f.text_field :accounting_category_id %>
+  </div>
+  <div class="field">
+    <%= f.label :corporation_id %><br>
+    <%= f.text_field :corporation_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

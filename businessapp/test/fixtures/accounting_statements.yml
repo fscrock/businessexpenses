@@ -1,0 +1,39 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  is_income: false
+  net_amount: 1.5
+  vat_amount: 1.5
+  frontpage_data: 
+  backpage_data: 
+  frontpage_content_type: MyString
+  backpage_content_type: MyString
+  backpage_filename: MyString
+  frontpage_filename: MyString
+  bill_number: MyString
+  issuedate: 2015-11-28
+  payment_date: 2015-11-28
+  description: MyString
+  physical_location: MyString
+  receiver_or_issuer_name: MyString
+  accounting_category_id: 
+  corporation_id: 
+
+two:
+  is_income: false
+  net_amount: 1.5
+  vat_amount: 1.5
+  frontpage_data: 
+  backpage_data: 
+  frontpage_content_type: MyString
+  backpage_content_type: MyString
+  backpage_filename: MyString
+  frontpage_filename: MyString
+  bill_number: MyString
+  issuedate: 2015-11-28
+  payment_date: 2015-11-28
+  description: MyString
+  physical_location: MyString
+  receiver_or_issuer_name: MyString
+  accounting_category_id: 
+  corporation_id: 

@@ -1,0 +1,89 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Is income:</strong>
+  <%= @accounting_statement.is_income %>
+</p>
+
+<p>
+  <strong>Net amount:</strong>
+  <%= @accounting_statement.net_amount %>
+</p>
+
+<p>
+  <strong>Vat amount:</strong>
+  <%= @accounting_statement.vat_amount %>
+</p>
+
+<p>
+  <strong>Frontpage data:</strong>
+  <%= @accounting_statement.frontpage_data %>
+</p>
+
+<p>
+  <strong>Backpage data:</strong>
+  <%= @accounting_statement.backpage_data %>
+</p>
+
+<p>
+  <strong>Frontpage content type:</strong>
+  <%= @accounting_statement.frontpage_content_type %>
+</p>
+
+<p>
+  <strong>Backpage content type:</strong>
+  <%= @accounting_statement.backpage_content_type %>
+</p>
+
+<p>
+  <strong>Backpage filename:</strong>
+  <%= @accounting_statement.backpage_filename %>
+</p>
+
+<p>
+  <strong>Frontpage filename:</strong>
+  <%= @accounting_statement.frontpage_filename %>
+</p>
+
+<p>
+  <strong>Bill number:</strong>
+  <%= @accounting_statement.bill_number %>
+</p>
+
+<p>
+  <strong>Issuedate:</strong>
+  <%= @accounting_statement.issuedate %>
+</p>
+
+<p>
+  <strong>Payment date:</strong>
+  <%= @accounting_statement.payment_date %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @accounting_statement.description %>
+</p>
+
+<p>
+  <strong>Physical location:</strong>
+  <%= @accounting_statement.physical_location %>
+</p>
+
+<p>
+  <strong>Receiver or issuer name:</strong>
+  <%= @accounting_statement.receiver_or_issuer_name %>
+</p>
+
+<p>
+  <strong>Accounting category:</strong>
+  <%= @accounting_statement.accounting_category_id %>
+</p>
+
+<p>
+  <strong>Corporation:</strong>
+  <%= @accounting_statement.corporation_id %>
+</p>
+
+<%= link_to 'Edit', edit_accounting_statement_path(@accounting_statement) %> |
+<%= link_to 'Back', accounting_statements_path %>
