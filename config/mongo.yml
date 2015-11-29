@@ -21,5 +21,5 @@ production:
   host: ds057954.mongolab.com
   port: 57954
   database: heroku_55w017pv
-  user: heroku_55w017pv
+  user: aBbJgfaMHhEK6Pzh9Me5
   password: <%= ENV["MONGO_DB_PASSWORD"] %>
