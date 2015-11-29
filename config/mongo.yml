@@ -20,7 +20,7 @@ production:
   host: candidate.60.mongolayer.com
   port: 10283
   database: app44430281
-  user: heroku
+  user: ggZMehYLZZv4RMYnSq7V
   password: <%= ENV['MONGO_DB_PASSWORD'] %>
   
   
