@@ -17,6 +17,10 @@ test:
   w: 0
 
 production:
-  <<: *defaults
-  uri: "<%= ENV['MONGOHQ_URL'] %>"
+  host: candidate.60.mongolayer.com
+  port: 10283
+  database: app44430281
+  user: heroku
+  password: <%= ENV['MONGO_DB_PASSWORD'] %>
+  
   
