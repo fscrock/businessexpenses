@@ -17,4 +17,9 @@ test:
   w: 0
 
 production:
-  url: <%= ENV["MONGOLAB_URI"] %>
+  <<: *defaults
+  host: ds057954.mongolab.com
+  port: 57954
+  database: heroku_55w017pv
+  user: heroku_55w017pv
+  password: <%= ENV["MONGO_DB_PASSWORD"] %>
