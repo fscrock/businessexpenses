@@ -16,9 +16,10 @@ test:
   database: businessapp_test
   w: 0
 
-# set these environment variables on your prod server
 production:
   <<: *defaults
-  database: businessapp
-  username: <%= ENV['MONGO_USERNAME'] %>
-  password: <%= ENV['MONGO_PASSWORD'] %>
+  port: 57954
+  host: ds057954.mongolab.com
+  database: heroku_55w017pv
+  username: businessappdbuser
+  password: THXkywfsdmn8jRJJSdCJ
