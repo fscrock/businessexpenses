@@ -17,10 +17,10 @@ test:
   w: 0
 
 production:
-  host: candidate.60.mongolayer.com
-  port: 10283
-  database: app44430281
-  user: ggZMehYLZZv4RMYnSq7V
+  host: ds061374.mongolab.com
+  port: 61374
+  database: businessappproduction
+  user: frank
   password: <%= ENV['MONGO_DB_PASSWORD'] %>
   
   
