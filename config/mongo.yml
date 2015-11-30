@@ -17,10 +17,10 @@ test:
   w: 0
 
 production:
-  host: ds061374.mongolab.com
-  port: 61374
-  database: businessappproduction
-  user: frank
+  host: SG-Businessappcluster-6084.servers.mongodirector.com
+  port: 27017
+  database: admin
+  user: admin
   password: <%= ENV['MONGO_DB_PASSWORD'] %>
   
   
