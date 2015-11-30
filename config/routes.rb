@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :accounting_statements
+  resources :accounting_statements do 
+    member do
+      get 'front_image'
+      get 'back_image'
+    end
+  end
+  
   resources :accounting_categories
   resources :corporations
   resources :owners

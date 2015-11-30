@@ -28,8 +28,16 @@
         <td><%= (accounting_statement.is_income) ? "Income" : "Costs" %></td>
         <td><%= accounting_statement.net_amount %></td>
         <td><%= accounting_statement.vat_amount %></td>
-        <td><%= accounting_statement.frontpage_data %></td>
-        <td><%= accounting_statement.backpage_data %></td>
+        <td>
+			<% if accounting_statement.has_frontpage? %>
+				<%= link_to "Show", front_image_accounting_statement_path(id:accounting_statement.id), :target => "_blank" %>
+			<% end %>
+		</td>
+        <td>
+			<% if accounting_statement.has_backpage? %>
+				<%= link_to "Show", back_image_accounting_statement_path(id:accounting_statement.id), :target => "_blank" %>
+			<% end %>
+		</td>
         <td><%= accounting_statement.bill_number %></td>
         <td><%= accounting_statement.issuedate %></td>
         <td><%= accounting_statement.payment_date %></td>

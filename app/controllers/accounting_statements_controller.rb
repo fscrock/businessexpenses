@@ -19,7 +19,15 @@ class AccountingStatementsController < ApplicationController
   def edit
   end
 
+  def front_image
+    statement = AccountingStatement.find params[:id]
+    send_data statement.frontpage_data, type: statement.frontpage_content_type, disposition: 'inline'
+  end
 
+  def back_image
+    statement = AccountingStatement.find params[:id]
+    send_data statement.backpage_data, type: statement.backpage_content_type, disposition: 'inline'
+  end
 
 
 
@@ -27,8 +35,9 @@ class AccountingStatementsController < ApplicationController
 
   # POST /accounting_statements
   def create
-    @accounting_statement = AccountingStatement.new(converted_float_params)
-    
+    new_params = converted_float_params
+    new_params = assign_image_data(new_params)
+    @accounting_statement = AccountingStatement.new(new_params)
     if @accounting_statement.save
       redirect_to @accounting_statement, notice: 'Accounting statement was successfully created.'
     else
@@ -37,8 +46,10 @@ class AccountingStatementsController < ApplicationController
   end
 
   # PATCH/PUT /accounting_statements/1
-  def update
-    if @accounting_statement.update_attributes(converted_float_params)
+  def update    
+    new_params = converted_float_params
+    new_params = assign_image_data(new_params)
+    if @accounting_statement.update_attributes(new_params)
       redirect_to @accounting_statement, notice: 'Accounting statement was successfully updated.'
     else
       render :edit
@@ -51,15 +62,32 @@ class AccountingStatementsController < ApplicationController
     redirect_to accounting_statements_url, notice: 'Accounting statement was successfully destroyed.'
   end
 
+
+
   private
   
-    def is_float_key?(param_key)
-      if param_key == "net_amount" or param_key == "vat_amount"
-        return true
-      else
-        return false
-      end
+  def is_float_key?(param_key)
+    if param_key == "net_amount" or param_key == "vat_amount"
+      return true
+    else
+      return false
     end
+  end
+
+
+
+
+  def assign_image_data(new_params)
+    ["frontpage_data", "backpage_data"].each do |file_key|
+      if new_params[file_key]
+        new_params[file_key.split("_").first + "_content_type"] = new_params[file_key].content_type 
+        new_params[file_key.split("_").first + "_filename"] = new_params[file_key].original_filename
+        new_params[file_key.split("_").first + "_data"] = new_params[file_key].tempfile.read
+      end      
+    end
+    new_params
+  end
+
   
   def converted_float_params
     new_params = {}

@@ -40,7 +40,22 @@ class AccountingStatement
     else
       return ""
     end
-    
+  end
+  
+  def has_frontpage?
+    if frontpage_data and frontpage_data.size > 0
+      return true
+    else
+      return false
+    end
+  end
+  
+  def has_backpage?
+    if backpage_data and backpage_data.size > 0
+      return true
+    else
+      return false
+    end
   end
   
   

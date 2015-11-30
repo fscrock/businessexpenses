@@ -16,34 +16,22 @@
 </p>
 
 <p>
-  <strong>Frontpage data:</strong>
-  <%= @accounting_statement.frontpage_data %>
+  <strong>Frontpage:</strong>
+	<% if @accounting_statement.has_frontpage? %>
+  		<%= link_to "Show", front_image_accounting_statement_path(id:@accounting_statement.id), :target => "_blank" %>
+	<% end %>
 </p>
 
 <p>
-  <strong>Backpage data:</strong>
-  <%= @accounting_statement.backpage_data %>
+  <strong>Backpage:</strong>
+	<% if @accounting_statement.has_backpage? %>
+  		<%= link_to "Show", back_image_accounting_statement_path(id:@accounting_statement.id), :target => "_blank" %>
+	<% end %>
 </p>
 
-<p>
-  <strong>Frontpage content type:</strong>
-  <%= @accounting_statement.frontpage_content_type %>
-</p>
 
-<p>
-  <strong>Backpage content type:</strong>
-  <%= @accounting_statement.backpage_content_type %>
-</p>
 
-<p>
-  <strong>Backpage filename:</strong>
-  <%= @accounting_statement.backpage_filename %>
-</p>
 
-<p>
-  <strong>Frontpage filename:</strong>
-  <%= @accounting_statement.frontpage_filename %>
-</p>
 
 <p>
   <strong>Bill number:</strong>
