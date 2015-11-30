@@ -28,6 +28,7 @@ class AccountingStatementsController < ApplicationController
   # POST /accounting_statements
   def create
     @accounting_statement = AccountingStatement.new(converted_float_params)
+    
     if @accounting_statement.save
       redirect_to @accounting_statement, notice: 'Accounting statement was successfully created.'
     else

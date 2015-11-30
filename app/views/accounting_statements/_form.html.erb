@@ -23,30 +23,21 @@
     <%= f.label :vat_amount %><br>
     <%= f.text_field :vat_amount %>
   </div>
+
+
+
   <div class="field">
-    <%= f.label :frontpage_data %><br>
-    <%= f.text_field :frontpage_data %>
+    <%= f.label "Front Image" %><br>
+    <%= f.file_field :frontpage_data %>
   </div>
   <div class="field">
-    <%= f.label :backpage_data %><br>
-    <%= f.text_field :backpage_data %>
+    <%= f.label "Back Image" %><br>
+    <%= f.file_field :backpage_data %>
   </div>
-  <div class="field">
-    <%= f.label :frontpage_content_type %><br>
-    <%= f.text_field :frontpage_content_type %>
-  </div>
-  <div class="field">
-    <%= f.label :backpage_content_type %><br>
-    <%= f.text_field :backpage_content_type %>
-  </div>
-  <div class="field">
-    <%= f.label :backpage_filename %><br>
-    <%= f.text_field :backpage_filename %>
-  </div>
-  <div class="field">
-    <%= f.label :frontpage_filename %><br>
-    <%= f.text_field :frontpage_filename %>
-  </div>
+
+
+
+
   <div class="field">
     <%= f.label :bill_number %><br>
     <%= f.text_field :bill_number %>
@@ -71,14 +62,23 @@
     <%= f.label :receiver_or_issuer_name %><br>
     <%= f.text_field :receiver_or_issuer_name %>
   </div>
-  <div class="field">
-    <%= f.label :accounting_category_id %><br>
-    <%= f.text_field :accounting_category_id %>
-  </div>
-  <div class="field">
-    <%= f.label :corporation_id %><br>
-    <%= f.text_field :corporation_id %>
-  </div>
+
+
+
+<div class="field">
+  <%= f.label :accounting_category_id %><br>
+  <%= select_tag "accounting_statement[accounting_category_id]", content_tag(:option,'select one...',:value=>"") + options_from_collection_for_select(AccountingCategory.all, "id", "name", @accounting_statement.accounting_category_id) %>
+
+
+
+</div>
+<div class="field">
+  <%= f.label :corporation_id %><br>
+  <%= select_tag "accounting_statement[corporation_id]", content_tag(:option,'select one...',:value=>"") + options_from_collection_for_select(Corporation.all, "id", "name", @accounting_statement.corporation_id) %>
+</div>
+
+
+
   <div class="actions">
     <%= f.submit %>
   </div>

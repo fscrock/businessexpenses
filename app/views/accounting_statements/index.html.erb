@@ -1,26 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Accounting Statements</h1>
+<h1>Accounting Statements</h1>
 
 <table class="uk-table">
   <thead>
     <tr>
       <th>Type</th>
-      <th>Net amount</th>
-      <th>Vat amount</th>
-      <th>Frontpage data</th>
-      <th>Backpage data</th>
-      <th>Frontpage content type</th>
-      <th>Backpage content type</th>
-      <th>Backpage filename</th>
-      <th>Frontpage filename</th>
-      <th>Bill number</th>
-      <th>Issuedate</th>
-      <th>Payment date</th>
+      <th>Net</th>
+      <th>Vat</th>
+      <th>Frontpage image</th>
+      <th>Backpage image</th>
+      <th>Bill No.</th>
+      <th>Bill Date</th>
+      <th>Payment At</th>
       <th>Description</th>
-      <th>Physical location</th>
-      <th>Receiver or issuer name</th>
-      <th>Accounting category</th>
+      <th>Location</th>
+      <th>Receiver / Issuer</th>
+      <th>Category</th>
       <th>Corporation</th>
       <th colspan="3"></th>
     </tr>
@@ -34,18 +30,14 @@
         <td><%= accounting_statement.vat_amount %></td>
         <td><%= accounting_statement.frontpage_data %></td>
         <td><%= accounting_statement.backpage_data %></td>
-        <td><%= accounting_statement.frontpage_content_type %></td>
-        <td><%= accounting_statement.backpage_content_type %></td>
-        <td><%= accounting_statement.backpage_filename %></td>
-        <td><%= accounting_statement.frontpage_filename %></td>
         <td><%= accounting_statement.bill_number %></td>
         <td><%= accounting_statement.issuedate %></td>
         <td><%= accounting_statement.payment_date %></td>
         <td><%= accounting_statement.description %></td>
         <td><%= accounting_statement.physical_location %></td>
         <td><%= accounting_statement.receiver_or_issuer_name %></td>
-        <td><%= accounting_statement.accounting_category_id %></td>
-        <td><%= accounting_statement.corporation_id %></td>
+        <td><%= accounting_statement.accounting_category %></td>
+        <td><%= accounting_statement.corporation %></td>
         <td><%= link_to 'Show', accounting_statement %></td>
         <td><%= link_to 'Edit', edit_accounting_statement_path(accounting_statement) %></td>
         <td><%= link_to 'Destroy', accounting_statement, method: :delete, data: { confirm: 'Are you sure?' } %></td>
