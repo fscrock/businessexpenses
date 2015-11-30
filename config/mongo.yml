@@ -19,8 +19,8 @@ test:
 production:
   host: SG-Businessappcluster-6084.servers.mongodirector.com
   port: 27017
-  database: admin
-  user: admin
+  database: businessapp
+  user: frank
   password: <%= ENV['MONGO_DB_PASSWORD'] %>
   
   
